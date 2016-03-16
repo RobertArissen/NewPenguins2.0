@@ -6,9 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Matx - Material Design Agency Template</title>
+        <title>New Penguins</title>
         <meta name="description" content="Material Agency Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <!-- matx favicons -->
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/matx-icon/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/matx-icon/apple-touch-icon-114x114.png" />
@@ -16,8 +17,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/matx-icon/apple-touch-icon-144x144.png" />
         <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/matx-icon/apple-touch-icon-120x120.png" />
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/matx-icon/apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/matx-icon/favicon-32x32.png" sizes="32x32"/>
-        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/matx-icon/favicon-16x16.png" sizes="16x16"/>
+        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/Penguin_logo.ico" type="image/x-icon" />
         <meta name="application-name" content="&nbsp;" />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/matx-icon/mstile-144x144.png"/>
