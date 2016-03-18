@@ -14,16 +14,16 @@ function create_post_type() {
     )
   );
 
-
   register_post_type( 'portfolio',
     array(
       'labels' => array(
         'name' => __( 'Portfolio' ),
         'singular_name' => __( 'Portfolio' )
       ),
+      'taxonomies' => array('category'),
       'public' => true,
       'has_archive' => true,
-    'menu_position' => 5,
+      'menu_position' => 5,
     )
   );
 

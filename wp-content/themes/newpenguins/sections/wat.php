@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                  <a href="#" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-highlight">Bekijk al onze projecten</a>
+                  <a href="#service" data-target="#service" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-highlight">Bekijk al onze projecten</a>
                 </div>
             </div>
         </div>

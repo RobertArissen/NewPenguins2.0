@@ -1,7 +1,7 @@
 <div class="matx-popup-start">
-    
+
     <div class="popup-header">
-    
+
         <!-- Popup Header -->
         <div class="clearfix popup-meta">
             <div class="pull-left item-description">
