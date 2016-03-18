@@ -139,7 +139,7 @@ div.tparrows.tp-rightarrow:before {
 }
 .rev-title-typo {
 font-family: 'bebas_neueregular';
-  font-weight: 900;
+  font-weight: 500;
   color: #fff;
 }
 .rev-title-typo span {
@@ -335,6 +335,7 @@ font-family: 'bebas_neueregular';
 .what-we-do-cards .card-body p {
   line-height: 1.7;
   margin: 10px;
+  font-size: 1.3em;
 }
 .card-title {
   color: #333333;
@@ -527,7 +528,7 @@ font-family: 'bebas_neueregular';
 .card-title {
   color: #333333;
   font-family: 'bebas_neueregular';
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
   margin-bottom: 3px;
   letter-spacing: .6px;
