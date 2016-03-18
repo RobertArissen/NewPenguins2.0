@@ -49,7 +49,11 @@
                         data-splitin="none"
                         data-splitout="none"
                         data-responsive_offset="on"
+<<<<<<< HEAD
                         style="z-index: 7; white-space: nowrap; text-align: center; font-weight:500">Gedreven<span>.</span> Kritisch<span>.</span> Eigenwijs<span>.</span> Ondernemend<span>.</span> Creatief<span>.</span> Ambitieus<span>.</span>
+=======
+                        style="z-index: 7; white-space: nowrap; text-align: center">Gedreven<span>.</span> Kritisch<span>.</span> Eigenwijs<span>.</span> Ondernemend<span>.</span> Creatief<span>.</span> Ambitieus<span>.</span>
+>>>>>>> origin/master
                     </div>
                 </li>
             </ul>

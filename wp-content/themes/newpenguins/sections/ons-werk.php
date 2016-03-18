@@ -8,7 +8,11 @@
 
                 <!-- start section title -->
                 <div class="text-center section-heading">
+<<<<<<< HEAD
                     <h2 class="title-sec">Ons werk</h2>
+=======
+                    <h2 class="title-sec">Werk</h2>
+>>>>>>> origin/master
                 </div>
                 <!-- end section title -->
 
@@ -19,11 +23,23 @@
 
                                 <!-- start portfolio category items -->
                                 <ul class="clearfix portfolio-category mdl-shadow--2dp">
+<<<<<<< HEAD
                                     <li class="filter active" data-target="*">ALL</li>
                                     <li class="filter" data-target=".art">ART</li>
                                     <li class="filter" data-target=".accessories">ACCESSORIES</li>
                                     <li class="filter" data-target=".design">DESIGN</li>
                                     <li class="filter" data-target=".fashon">FASHION</li>
+=======
+                                  <li class="filter active" data-target="*">ALLE</li>
+                                  <?php
+                                    $taxonomy = 'portfolio';
+                                    $terms = get_terms('category'); // Get all terms of a taxonomy
+                                    if ( $terms ) :
+                                    foreach ( $terms as $term ) {
+                                      if ( $term->name != 'Geen categorie' ) { ?>
+                                      <li class="filter" data-target="<?php echo '.'.$term->slug; ?>"><?php echo $term->name; ?></li>
+                                  <?php } } endif;?>
+>>>>>>> origin/master
                                 </ul>
                                 <!-- end portfolio category items -->
 
@@ -35,6 +51,7 @@
                         <!-- start portfolio items -->
                         <div class="clearfix protfolio-items">
 
+<<<<<<< HEAD
                             <!-- start single portfolio item -->
                             <div id="portfolio-01" class="col-xxs-6 col-xs-6 col-sm-4 single-portfolio">
                                 <div class="portfolio-item">
@@ -135,6 +152,30 @@
                                         <!-- start portfolio image -->
                                         <div class="protfolio-image">
                                             <img src="http://placehold.it/360x240" alt="portfolio">
+=======
+                          <?php
+
+                          $args = array(
+                              'post_type'=> 'portfolio',
+                              'order'    => 'ASC'
+                          );
+
+                          $the_query = new WP_Query( $args );
+                          if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+
+                          ?>
+
+                            <!-- start single portfolio item -->
+                            <div id="portfolio-01" class="col-xxs-6 col-xs-6 col-sm-4 single-portfolio <?php foreach((get_the_category()) as $category) {
+                                echo strtolower($category->cat_name) . ' ';
+                            } ?>">
+                                <div class="portfolio-item">
+                                    <a href="<?php echo get_permalink(); ?>" class="ajax-portfolio">
+
+                                        <!-- start portfolio image -->
+                                        <div class="protfolio-image">
+                                            <img src="<?php echo get_field('primaire_afbeelding')['sizes']['large'] ?>" alt="portfolio">
+>>>>>>> origin/master
                                         </div>
                                         <!-- end portfolio image -->
 
@@ -142,7 +183,11 @@
                                             <i class="zmdi zmdi-plus-circle"></i>
 
                                             <!-- portfolio items caption -->
+<<<<<<< HEAD
                                             <h3 class="portfolio-title">item name</h3>
+=======
+                                            <h3 class="portfolio-title"><?php the_title() ?></h3>
+>>>>>>> origin/master
                                         </div>
                                         <div class="pf-overlay"></div>
                                     </a>
@@ -150,6 +195,7 @@
                             </div>
                             <!-- end single portfolio item -->
 
+<<<<<<< HEAD
                             <!-- start single portfolio item-->
                             <div id="portfolio-06" class="col-xxs-6 col-xs-6 col-sm-4 single-portfolio art design">
                                 <div class="portfolio-item">
@@ -172,6 +218,9 @@
                                 </div>
                             </div>
                             <!-- end single portfolio item -->
+=======
+                          <?php endwhile;endif; wp_reset_postdata(); ?>
+>>>>>>> origin/master
 
                         </div>
                         <!-- end portfolio items -->

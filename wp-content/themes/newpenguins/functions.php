@@ -27,7 +27,6 @@ function create_post_type() {
     )
   );
 
-
   register_post_type( 'portfolio',
     array(
       'labels' => array(
@@ -37,7 +36,7 @@ function create_post_type() {
       'taxonomies' => array('category'),
       'public' => true,
       'has_archive' => true,
-    'menu_position' => 5,
+      'menu_position' => 5,
     )
   );
 
