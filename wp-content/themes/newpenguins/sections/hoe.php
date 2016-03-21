@@ -16,38 +16,26 @@
                         <div class="why-choose-us-content-start" data-action="accordionWithImage">
                             <div class="col-sm-12 col-md-7 col-lg-offset-1 col-lg-5">
                                 <ul class="wcu-collapse">
-                                    <li class="single-acc-item collapse-open" data-image-src="<?php echo get_template_directory_uri(); ?>/img/why-choose-us/01.jpg">
-                                        <div class="collapse-label">
-                                            <div class="cllabelmain">Projectbureau de kolonie</div>
-                                            <div class="icwrap"><i class="zmdi zmdi-plus"></i></div>
-                                        </div>
-                                        <div class="collapse-content">Wij zijn er voor u: waar, hoe en wanneer u wilt. Wij staan open voor elke samenwerking! Door onze unieke samenstelling en onze professionele aanpak vormen we de aangewezen partij voor het realiseren van diverse projecten.
-                                          <br/><a href="#" style="margin-top:10px; margin-bottom:10px;" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-black pull-right">De Penguinmethode</a>
-                                        </div>
-                                    </li>
-                                    <li class="single-acc-item" data-image-src="<?php echo get_template_directory_uri(); ?>/img/why-choose-us/02.jpg">
-                                        <div class="collapse-label">
-                                            <div class="cllabelmain">New Penguins Talent</div>
-                                            <div class="icwrap"><i class="zmdi zmdi-plus"></i></div>
-                                        </div>
-                                        <div class="collapse-content">Talent, opdracht, relatie, bedrijf of budget is nooit hetzelfde en daarom kijken we graag met u naar een samenwerking op maat. Alles is mogelijk. Zo zorgen wij ervoor dat het inhuren van extra krachten daadwerkelijk voordeliger en praktischer is dan zelf iemand in dienst nemen.
-                                        <br/><a href="#" style="margin-top:10px; margin-bottom:10px;" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-black pull-right">Bekijk folder</a>
-                                        </div>
-                                    </li>
-                                    <li class="single-acc-item" data-image-src="<?php echo get_template_directory_uri(); ?>/img/why-choose-us/03.jpg">
-                                        <div class="collapse-label">
-                                            <div class="cllabelmain">De Penguinformule</div>
-                                            <div class="icwrap"><i class="zmdi zmdi-plus"></i></div>
-                                        </div>
-                                        <div class="collapse-content">Door onze aantrekkingskracht op de arbeidsmarkt komen wij in aanraking met uitzonderlijke, talentvolle mensen. Deze mensen koppelen wij desgevraagd aan de bedrijven waar zij een bovengemiddelde toegevoegde waarde realiseren.
-                                        <br/><a href="#" style="margin-top:10px; margin-bottom:10px;" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-black pull-right">Bekijk vacatures</a>
-                                        </div>
-                                    </li>
+
+                                    <?php $i = 0; foreach ( get_field('hoe') as $item ) { ?>
+
+                                      <li class="single-acc-item <?php if($i == 0){ echo 'collapse-open'; } ?>" data-image-src="<?php echo $item['afbeelding']; ?>">
+                                          <div class="collapse-label">
+                                              <div class="cllabelmain"><?php echo $item['heading']; ?></div>
+                                              <div class="icwrap"><i class="zmdi zmdi-plus"></i></div>
+                                          </div>
+                                          <div class="collapse-content"><?php echo $item['content']; ?>
+                                            <br/><a href="<?php echo $item['link']; ?>" style="margin-top:10px; margin-bottom:10px;" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-black pull-right"><?php echo $item['knop_tekst']; ?></a>
+                                          </div>
+                                      </li>
+
+                                    <?php $i++; } ?>
+
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-5 col-lg-5">
                                 <div class="wcu-thumb-wrap acc-thumb-area">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/why-choose-us/01.jpg" alt="Accordion Image">
+                                    <img src="<?php echo get_field('hoe')[0]['afbeelding']; ?>" alt="Accordion Image">
                                 </div>
                             </div>
                         </div>

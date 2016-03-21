@@ -235,73 +235,6 @@ $(document).ready(function($){
 
 	});
 
-
-	// Contact Form
-	$('#contactForm').on('submit', function(e){
-		e.preventDefault();
-
-		var $this = $(this),
-			data = $(this).serialize(),
-			name = $this.find('#name'),
-			email = $this.find('#email'),
-			message = $this.find('#message'),
-			loader = $this.find('.form-loader-area'),
-			submitBtn = $this.find('button, input[type="submit"]');
-
-		loader.show();
-		submitBtn.attr('disabled', 'disabled');
-
-		var success = function(response) {
-			swal("Thanks!", "Your message has been sent successfully!", "success");
-			$this.find("input:not('[type=submit]'), textarea").val("");
-			$this.find(".is-dirty, .is-invalid").removeClass('is-dirty is-invalid');
-		};
-
-		var error = function(response) {
-			$this.find('.is-invalid').removeClass('is-invalid');
-			if ( response.name ) {
-				name.closest('.mdl-textfield').addClass('is-invalid');
-			}
-
-			if ( response.email ) {
-				email.closest('.mdl-textfield').addClass('is-invalid');
-			}
-
-			if ( response.message ) {
-				message.closest('.mdl-textfield').addClass('is-invalid');
-			}
-		};
-
-		$.ajax({
-			type: "POST",
-			url: "assets/inc/sendEmail.php",
-			data: data
-		}).done(function(res){
-
-			var response = JSON.parse(res);
-
-			( response.OK ) ? success(response) : error(response);
-
-			var hand = setTimeout(function(){
-				loader.hide();
-				clearTimeout(hand);
-			}, 1000);
-
-		}).fail(function(){
-
-			sweetAlert("Oops...", "Something went wrong, Try again later!", "error");
-
-			var hand = setTimeout(function(){
-				loader.hide();
-				submitBtn.removeAttr('disabled');
-				clearTimeout(hand);
-			}, 1000);
-
-		});
-	});
-
-
-
 	// Google Map show
 	$('#map-open').click(function(e){
 		e.preventDefault();
@@ -326,10 +259,10 @@ $(document).ready(function($){
 	if ( $(mapWrapperID).length > 0 && window.google && window.google.maps ) {
 
 		window.mapOps = {
-			lat : 23.77997,	// Provide your latitude
-			lng : 90.42428, // Provide your longitude
-			content: '<p>Coder Pixel, Gulshan 1, Dhaka, Bangladesh</p>', // Provide your address to show on pop up
-			icon: 'img/marker-icon.png',
+			lat : lat,
+			lng : lng,
+			content: '<p>' + office_location + '</p>',
+			icon: template_directory+'/img/mapMarker002.png',
 			zoom : 16,
 			panBy : { x: 0, y: -40 }
 		};
@@ -344,7 +277,6 @@ $(document).ready(function($){
 			disableDefaultUI: true,
 			styles : mapStyle
 		});
-
 
 		map.addMarker({
 			lat : mapOps.lat,
@@ -381,8 +313,6 @@ $(window).load(function(){
 
 
 $(window).on('scroll', function(e){
-
-	// Header Sticky
 
 	if ( $(this).scrollTop() > 60 ) {
 		header.addClass('is-sticky');

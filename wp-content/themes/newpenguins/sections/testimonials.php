@@ -10,62 +10,38 @@
                     <!-- start testimonial slider -->
                     <div class="slider-item testimonials styled-paginantion colorsch-black" data-action="testimonialSlider">
 
-                        <!-- start single testimonial -->
-                        <div class="text-center single-testimonial">
+                      <?php
 
-                            <!-- start testimonial thumbnail -->
-                            <div class="recomenders-thumb">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/01.png" alt="">
-                            </div>
-                            <!-- end testimonial thumbnail -->
+                      $args = array(
+                          'post_type'=> 'testimonials',
+                          'order'    => 'ASC'
+                      );
 
-                            <div class="recomenders-info">
-                                <!-- testimonial text -->
-                                <p>Distinctively whiteboard interactive partnerships through client-centric ideas. Uniquely engineer future-proof testing procedures with bricks-and-clicks metrics. Authoritatively synthesize bleeding-edge supply chains through granular e-services. Monotonectally.</p>
+                      $the_query = new WP_Query( $args );
+                      if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 
-                                <!-- recommender name and designation -->
-                                <div><span class="recomenders-name">Jeffrey Way,</span> <span class="recomenders-role"> Nettuts+</span></div>
-                            </div>
-                        </div>
-                        <!-- end single testimonial -->
+                      ?>
 
                         <!-- start single testimonial -->
                         <div class="text-center single-testimonial">
 
                             <!-- start testimonial thumbnail -->
                             <div class="recomenders-thumb">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/02.png" alt="">
+                                <img src="<?php echo get_field('avatar'); ?>" alt="">
                             </div>
                             <!-- end testimonial thumbnail -->
 
                             <div class="recomenders-info">
                                 <!-- testimonial text -->
-                                <p>Quickly leverage existing quality action items before B2B infrastructures. Professionally disintermediate enterprise networks after go forward potentialities. Intrinsicly exploit innovative communities rather than parallel.</p>
+                                <p><?php the_content(); ?></p>
 
                                 <!-- recommender name and designation -->
-                                <div><span class="recomenders-name">Paul Irish,</span> <span class="recomenders-role"> Themeforest</span></div>
+                                <div><span class="recomenders-name"><?php the_title(); ?></span></div>
                             </div>
                         </div>
                         <!-- end single testimonial -->
 
-                        <!-- start single testimonial -->
-                        <div class="text-center single-testimonial">
-
-                            <!-- start testimonial thumbnail -->
-                            <div class="recomenders-thumb">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/03.png" alt="">
-                            </div>
-                            <!-- end testimonial thumbnail -->
-
-                            <div class="recomenders-info">
-                                <!-- testimonial text -->
-                                <p>Professionally integrate granular results through performance based content. Professionally provide access to inexpensive niches after front-end ROI. Competently synthesize backend methodologies whereas multimedia based.</p>
-
-                                <!-- recommender name and designation -->
-                                <div><span class="recomenders-name">Addy Osmani,</span> <span class="recomenders-role"> Codecanyon</span></div>
-                            </div>
-                        </div>
-                        <!-- end single testimonial -->
+                        <?php endwhile;endif; wp_reset_postdata(); ?>
 
                     </div>
                     <!-- end testimonial slider -->
