@@ -77,13 +77,14 @@
 
             <!-- start desktop nav -->
             <nav class="nav-typo main-nav">
+
                 <ul>
-                    <li><a href="#home" data-target="#home" class="menu-smooth-scroll">Home</a></li>
-                    <li><a href="#wat" data-target="#wat" class="menu-smooth-scroll">Wat</a></li>
-                    <li><a href="#waarom" data-target="#waarom" class="menu-smooth-scroll">Waarom</a></li>
-                    <li><a href="#hoe" data-target="#hoe" class="menu-smooth-scroll">Hoe</a></li>
-                    <li><a href="#wie" data-target="#wie" class="menu-smooth-scroll">Wie</a></li>
-                    <li><a href="#contact" data-target="#contact" class="menu-smooth-scroll">Contact</a></li>
+                    <?php
+                    
+
+                   wp_nav_menu( array('theme_location' => 'header-menu' ));
+                    ?>
+
                 </ul>
             </nav>
             <!-- end desktop nav -->

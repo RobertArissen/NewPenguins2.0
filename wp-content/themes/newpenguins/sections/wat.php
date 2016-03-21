@@ -4,7 +4,11 @@
     <!-- start highlighted things portion -->
     <section class="dark-secion what-we-do what-we-do-v2 overflow-hidden">
         <div class="section-common-space">
+<<<<<<< HEAD
+            <div class="container-fluid">
+=======
             <div class="container">
+>>>>>>> origin/master
                 <div class="what-we-do-content-start">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-4">
@@ -37,7 +41,11 @@
                     </div>
                 </div>
                 <div class="text-center">
+<<<<<<< HEAD
+                  <a href="#" data-target="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-highlight">Bekijk al onze projecten</a>
+=======
                   <a href="#service" data-target="#service" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-default btn-highlight">Bekijk al onze projecten</a>
+>>>>>>> origin/master
                 </div>
             </div>
         </div>
